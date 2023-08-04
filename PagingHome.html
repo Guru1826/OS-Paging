@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>OS Simulator</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="../assets/img/favicon.png" rel="icon" />
+    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.css" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: eNno
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/enno-free-simple-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center justify-content-between">
+        <h1 class="logo"><a href="../index.html">OS Simulator</a></h1>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li>
+              <a class="nav-link scrollto active" href="../index.html#home"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="#page-replacement">Single Level Paging</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="../index.html#services"
+                >Modules</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="../index.html#team">Team</a>
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
+ <!-- ======= Hero Section ======= -->
+ <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1 class="mb-4">Paging</h1>
+          <button type="button" class="btn btn-success btn-rounded">
+            <a href="paging.html" class="text-white">Simulation</a>
+          </button>
+          <div class="d-flex">
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img">
+          <img src="./pagingEx.jpg" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+    <main id="main">
+      <!-- ======= About Section ======= -->
+      <section id="page-replacement" class="about section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>About topic</h2>
+            <span>About topic</span>
+            <h4>What is Paging?</h4>
+            <div class="text-start">
+                <p>
+                    Paging is a memory management technique used in computer operating systems to efficiently manage and organize memory resources. It allows the operating system to divide the logical address space of a process into fixed-sized blocks called pages. Similarly, the physical memory is divided into fixed-sized blocks called frames.
+                </p>
+                <p>
+                    The main purpose of paging is to provide a layer of abstraction between the logical (virtual) memory used by a process and the physical memory available in the system. It enables the operating system to load and manage only the necessary portions of a process into physical memory, while the rest of the process remains stored on secondary storage (such as a hard disk) until needed.
+                </p>
+                <p>
+                    When a process references a memory address, the operating system translates the virtual address into a physical address using a data structure called a page table. The page table maps the virtual pages to their corresponding physical frames. This translation allows the process to access the data stored in physical memory, regardless of its actual location.                </p>
+    
+                <p>
+                    Paging provides several benefits, including efficient memory utilization, virtual memory support, memory protection, and simplified memory management. By dividing the memory into fixed-sized pages and using a page table for address translation, paging allows for flexible memory allocation, efficient utilization of available memory, and the ability to run larger programs than the physical memory size would typically allow.
+
+                    Overall, paging is a crucial mechanism in modern operating systems that enables efficient and transparent memory management, supporting the execution of multiple processes and optimizing system performance.                </p>
+            </div>
+         
+            <h3>Procedure For Paging : </h3>
+            <div class="text-start">
+                <p>
+                    <strong>1. Divide the address space :</strong> The first step is to divide the virtual address space of a process into fixed-sized units called pages. The size of each page is typically a power of 2, such as 4KB or 8KB. This division creates a logical structure for addressing memory.                </p>
+                <p>
+                    <strong>2. Divide the physical memory: </strong>Similarly, the physical memory available in the system is divided into fixed-sized units called frames. The size of each frame matches the size of a page in the virtual address space.                </p>
+                <p>
+                    <strong>3. Create a page table : </strong> A page table is created to map virtual pages to physical frames. The page table is a data structure that typically resides in the main memory. It contains entries for each page in the virtual address space. Each entry in the page table holds the mapping information for a virtual page, such as the corresponding physical frame number.    
+                <p>
+                    <strong>4. Translate virtual addresses to physical addresses : </strong> When a process accesses a virtual address, the paging system translates it into a physical address. The virtual address is divided into two parts: a page number and an offset within the page. The page number is used as an index into the page table to retrieve the corresponding physical frame number. The offset is combined with the physical frame number to form the physical address.
+                    Overall, paging is a crucial mechanism in modern operating systems that enables efficient and transparent memory management, supporting the execution of multiple processes and optimizing system performance.                </p>
+                <p>
+                    <strong>5. Handle page faults : </strong> If the translation process encounters a page that is not currently in the physical memory (known as a page fault), the operating system needs to handle it. The page fault handler retrieves the required page from secondary storage (such as a hard disk) and brings it into the physical memory, updating the page table accordingly.
+                </p>
+                <p>
+                    <strong>6. Manage page replacement : </strong> When the physical memory becomes full and a new page needs to be loaded, the operating system selects a page to evict from memory. This process, known as page replacement, involves selecting the least recently used or least frequently used page and swapping it out to make room for the new page. The page table is updated to reflect the new mapping.
+                </p>
+                <p>
+                   <strong>7. Update page table entries : </strong>  As pages are loaded or evicted from memory, the corresponding entries in the page table are updated to reflect the current mapping between virtual pages and physical frames.
+                </p>
+            </div>
+
+
+
+
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-lg-6 text-center" data-aos="fade-right" data-aos-delay="100">
+              <img src="./SLP.jpg" width="700"  class="img-fluid" alt="" />
+            </div>
+            <div
+              class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h3>Single Level Paging</h3>
+              <ul>
+                <div>
+                    Single-level paging is a memory management technique where the entire virtual address space and physical memory are divided into fixed-sized units called pages and frames, respectively, using a single-level page table.
+                </div>
+              </ul>
+              <h4>Advantages</h4>
+              <p>
+                <strong>Simplified memory management : </strong> Single-level paging simplifies memory management by using a single-level page table. This eliminates the need for complex hierarchical page tables, making memory management easier to implement and understand. <br>
+                <strong>Efficient address translation : </strong>Single-level paging provides efficient address translation. The page number from the virtual address can be used as an index directly into the page table to retrieve the corresponding physical frame number. This direct mapping enables fast and efficient address translation without the need for multiple levels of indirection. <br>
+                <strong>Reduced memory fragmentation : </strong>Single-level paging reduces memory fragmentation compared to other memory management techniques. By dividing the memory into fixed-sized pages, it eliminates internal fragmentation that occurs when memory is allocated in variable-sized chunks. This leads to better memory utilization and minimizes wasted space. <br>
+                <strong>Flexibility and adaptability : </strong>  Single-level paging offers flexibility and adaptability in memory allocation. Pages can be easily allocated or deallocated as needed, allowing the system to adjust to changing memory requirements. This dynamic allocation capability is particularly advantageous in multi-programming environments with varying memory demands. <br>
+                <strong>Easy implementation : </strong>Single-level paging is relatively straightforward to implement compared to more complex memory management schemes like multi-level paging or segmentation. With only one level of page table, the implementation becomes simpler and more efficient, making it an attractive choice for systems with limited resources or simpler requirements. <br>
+                
+              </p>
+              <h4>Disadvantages</h4>
+              <p>
+                <strong>Limited address space : </strong>Single-level paging can have limitations on the maximum addressable virtual memory space. Since the entire virtual address space is managed by a single page table, the size of the page table can become a bottleneck and restrict the addressable space to the number of entries in the table. <br />
+                <strong>Inefficient memory usage : </strong>Single-level paging may suffer from inefficient memory usage due to external fragmentation. If the allocation of pages is not optimized, there can be gaps between allocated pages, resulting in wasted memory space that cannot be utilized by other processes. <br />
+                <strong>Slower address translation : </strong>Single-level paging can lead to slower address translation for large address spaces. With a single-level page table, the lookup process becomes linear, requiring a sequential search through the entire table to find the desired page entry. This linear search can introduce overhead and increase the time required for address translation.<br />
+                <strong>Lack of flexibility in page size : </strong>Single-level paging restricts the flexibility in choosing page sizes. Since all pages in the virtual address space have to be of the same size, it may not be possible to optimize the page size for different types of applications or memory access patterns. This limitation can impact system performance.<br />
+                <strong>Limited support for memory sharing :</strong>Single-level paging may lack efficient mechanisms for memory sharing between processes. Since the page table is specific to each process, sharing memory between processes can be challenging and require additional coordination mechanisms, which can introduce complexity and overhead.<br />
+ 
+              </p>
+            </div>
+          </div>
+
+          
+
+
+          
+        </div>
+      </section>
+      <!-- End About Section -->
+    </main>
+    <!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <h3>OS Simulator</h3>
+              <p>
+                This project was build for the course CS254 - Operating Systems
+                Lab.
+              </p>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="https://github.com/hgupta12/OS-Simulator" class="github"
+              ><i class="bx bxl-github"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-bottom clearfix">
+        <div class="copyright">
+          &copy; Copyright <strong><span>OS Simulator</span></strong
+          >. All Rights Reserved
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
